@@ -40,7 +40,7 @@
 		if((((this.responseText).split("|")[10]).trim()).length>0){
 		document.getElementById("G1labe2").innerHTML = (this.responseText).split("|")[10];
 		document.getElementById("Goal 2").value = (this.responseText).split("|")[10];
-		document.getElementById("Goal 2").value = (this.responseText).split("|")[11];		
+		document.getElementById("G2 Due Date").value = (this.responseText).split("|")[11];		
 		document.getElementById("goal2div").style.display = "block";
 		}
 		

@@ -936,16 +936,16 @@
 											<label>Average Goal completion percentage for this week.</label><br>
 											<label  for="1" align="center" > Please enter average (0 to 100)  </label>										
 											<label class="lable-new" for="1" align="center">												
-											<input type="text" name="Average Goal completion" id="AverageGoalcompletion"" class="form-control"  style=" min-width:60px" value=""  onchange="checkgoalvalue(this.value);" placeholder="" required="" />
+											<input type="text" name="Average Goal completion" id="AverageGoalcompletion"" class="form-control"  style=" min-width:60px" value=""  onchange="checkgoalvalue('AverageGoalcompletion',this.value);" placeholder="" required="" />
 											</label>
 										</div>
 										<div class="form-control-labletext" id="goal1div" style="display:none">
 											<label id="G1label"></label><br>
 											<label  for="1" align="center" > Please enter average (0 to 100)  </label>										
 											<label class="lable-new" for="1" align="center">												
-											<input type="text" name="Goal 1" id="Goal 1" class="form-control"  style=" min-width:60px" value=""   placeholder=""  />
-											<input type="text" name="G1 Due Date" id="G1 Due Date" class="form-control"  style=" min-width:60px" value=""   placeholder=""  />
-											<input type="text" name="G1 %" id="G1 %"" class="form-control"  style=" min-width:60px" value=""  onchange="checkgoalvalue(this.value);" placeholder="" />
+											<input type="hidden" name="Goal 1" id="Goal 1" class="form-control"  style=" min-width:60px" value=""   placeholder=""  />
+											<input type="hidden" name="G1 Due Date" id="G1 Due Date" class="form-control"  style=" min-width:60px" value=""   placeholder=""  />
+											<input type="text" name="G1 %" id="G1 %" class="form-control"  style=" min-width:60px" value=""  onchange="checkgoalvalue('G1 %',this.value);" placeholder="" />
 											</label>
 										</div>
 										<div class="form-control-labletext" id="goal2div" style="display:none">
@@ -954,7 +954,7 @@
 											<label class="lable-new" for="1" align="center">												
 											<input type="hidden" name="Goal 2" id="Goal 2" class="form-control"  style=" min-width:60px" value=""  placeholder=""  />
 											<input type="hidden" name="G2 Due Date" id="G2 Due Date" class="form-control"  style=" min-width:60px" value=""  placeholder=""  />
-											<input type="text" name="G2 %" id="G2 %"" class="form-control"  style=" min-width:60px" value=""  onchange="checkgoalvalue(this.value);" placeholder="" />
+											<input type="text" name="G2 %" id="G2 %" class="form-control"  style=" min-width:60px" value=""  onchange="checkgoalvalue('G2 %',this.value);" placeholder="" />
 											</label>
 										</div>		
                                         <div class="form-control-labletext">
@@ -1210,9 +1210,9 @@
  <script>
    
  
- function checkgoalvalue(value){
+ function checkgoalvalue(id,value){
  if(value>100 || value<0.1){ 
- document.getElementById("AverageGoalcompletion").value =""
+ document.getElementById(id).value =""
  }
  }
 
