@@ -8,6 +8,7 @@
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
 	  if(((this.responseText).length)==5){
+		  console.log(this.responseText);
 		cleardata();
 		  
 	}else{
@@ -23,7 +24,7 @@
 		document.getElementById("Deaprtment /  Lable").innerHTML  = (this.responseText).split("|")[5];
 		document.getElementById("Focus Metric").value = (this.responseText).split("|")[6];
 		document.getElementById("Focus Metric Lable").innerHTML  = (this.responseText).split("|")[6];	
-		document.getElementById("Company").value = ((this.responseText).split("|")[7]).trim();
+		document.getElementById("Company").value = ((this.responseText).split("|")[7]);
 		document.getElementById("Email").value = (this.responseText).split("|")[2];
 		document.getElementById("Results Cycle End Date").value = (this.responseText).split("|")[3];
 		document.getElementById("endof13weeks").innerHTML = (this.responseText).split("|")[3];
@@ -32,12 +33,14 @@
 
 		if((((this.responseText).split("|")[8]).trim()).length>0){
 		document.getElementById("G1label").innerHTML = (this.responseText).split("|")[8];
-		document.getElementById("Goal 1").value = (this.responseText).split("|")[8];	
+		document.getElementById("Goal 1").value = (this.responseText).split("|")[8];
+		document.getElementById("G1 Due Date").value = (this.responseText).split("|")[9];		
 		document.getElementById("goal1div").style.display = "block";
 		}
-		if((((this.responseText).split("|")[9]).trim()).length>0){
-		document.getElementById("G1labe2").innerHTML = (this.responseText).split("|")[9];
-		document.getElementById("Goal 2").value = (this.responseText).split("|")[9];	
+		if((((this.responseText).split("|")[10]).trim()).length>0){
+		document.getElementById("G1labe2").innerHTML = (this.responseText).split("|")[10];
+		document.getElementById("Goal 2").value = (this.responseText).split("|")[10];
+		document.getElementById("Goal 2").value = (this.responseText).split("|")[11];		
 		document.getElementById("goal2div").style.display = "block";
 		}
 		
